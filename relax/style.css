@@ -112,3 +112,10 @@ a{
     align-items: center;
     display: flex;
 }
+#author{
+    font-size: 14px;
+    color: aquamarine;
+    margin-left: 30vw;
+    margin-top: 10px;
+
+}
