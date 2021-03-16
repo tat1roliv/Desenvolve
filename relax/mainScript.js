@@ -1,6 +1,4 @@
-console.log("teste");
-
-let databasePhrasesAuthorsbyIdNum = [
+let databasePhrasesAuthors = [
     {phrase: ' Frase[0] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ipsum eum laborum et ipsa',
     author: ' Autor[0] Maria da Silva',
     },
@@ -35,36 +33,34 @@ let databasePhrasesAuthorsbyIdNum = [
     },
 
     {phrase: ' Frase[8] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ipsum eum laborum et ipsa',
-    aauthor: ' Autor[8] Maria da Silva'}
-    ,
+    aauthor: ' Autor[8] Maria da Silva'
+    },
 
     {phrase: ' Frase[9] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ipsum eum laborum et ipsa',
     author: ' Autor[9] Maria da Silva',
     }
 ];
 
-let phrasesTotal = databasePhrasesAuthorsbyIdNum.length;
+let phrasesTotal = databasePhrasesAuthors.length;
 
 function generateNumRandom(){
     let nRandom = Math.floor(Math.random()*(phrasesTotal+1));
     return nRandom;
 }
 
-const numberPhrase = generateNumRandom(); 
+let numberPhrase = generateNumRandom(); 
 
-/*
-console.log(numberPhrase);
-console.log(databasePhrasesAuthorsbyIdNum[numberPhrase].phrase);
-console.log(databasePhrasesAuthorsbyIdNum[numberPhrase].author);
- */
+var currentPhrase = document.querySelector("#loremPhrase");
 
-function changePhrase(numberPhrase){
-    document.querySelector("#phrase").innerHTML = databasePhrasesAuthorsbyIdNum[numberPhrase].phrase;
-    document.querySelector("#author").innerHTML = databasePhrasesAuthorsbyIdNum[numberPhrase].author;
-}
+var currentAuthor = document.querySelector("#author");
+
+function changeData(){
+    currentPhrase.textContent = databasePhrasesAuthors[numberPhrase].phrase;
+    currentAuthor.textContent  = databasePhrasesAuthors[numberPhrase].author;
+ }
 
 var buttonGenerate = document.querySelector('#boxNewText');
-
 buttonGenerate.addEventListener("click", function(){
-  changePhrase(numberPhrase);
+    changeData();
+    generateNumRandom();
 });
