@@ -1,4 +1,3 @@
-
 let databasePhrasesAuthors = [
     {phrase: ' Frase[0] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ipsum eum laborum et ipsa',
     author: ' Autor[0] Maria da Silva',
@@ -34,8 +33,8 @@ let databasePhrasesAuthors = [
     },
 
     {phrase: ' Frase[8] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ipsum eum laborum et ipsa',
-    aauthor: ' Autor[8] Maria da Silva'}
-    ,
+    aauthor: ' Autor[8] Maria da Silva'
+    },
 
     {phrase: ' Frase[9] Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ipsum eum laborum et ipsa',
     author: ' Autor[9] Maria da Silva',
@@ -49,39 +48,19 @@ function generateNumRandom(){
     return nRandom;
 }
 
-const numberPhrase = generateNumRandom(); 
+let numberPhrase = generateNumRandom(); 
 
+var currentPhrase = document.querySelector("#loremPhrase");
 
-console.log(numberPhrase);
+var currentAuthor = document.querySelector("#author");
 
-/*
-console.log(databasePhrasesAuthors[numberPhrase].phrase);
-console.log(databasePhrasesAuthors[numberPhrase].author);
-*/
+function changeData(){
+    currentPhrase.textContent = databasePhrasesAuthors[numberPhrase].phrase;
+    currentAuthor.textContent  = databasePhrasesAuthors[numberPhrase].author;
+ }
 
-const phraseNow = databasePhrasesAuthors[numberPhrase].phrase;
-console.log(phraseNow);
-
-function changePhraseAndAuthor(){
-
-    document.querySelector("#loremPhrase").innerHTML = phraseNow;
-    /*
-    document.querySelector("#author").innerHTML = databasePhrasesAuthors[numberPhrase].author;
-    */
-}
-
-/*
-const phraseNow = databasePhrasesAuthors[numberPhrase].phrase;
-console.log(phraseNow);
-*/
 var buttonGenerate = document.querySelector('#boxNewText');
-
 buttonGenerate.addEventListener("click", function(){
-    /*
-    document.querySelector("#phrase").innerHTML = phraseNow.value; 
-    */
-    document.querySelector("#loremPhrase").innerHTML = "hola";
+    changeData();
+    generateNumRandom();
 });
-/*
-changePhraseAndAuthor(numberPhrase);
-*/
