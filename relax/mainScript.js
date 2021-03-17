@@ -48,19 +48,19 @@ function generateNumRandom(){
     return nRandom;
 }
 
-let numberPhrase = generateNumRandom(); 
+let numberPhrase = generateNumRandom(); //aqui
 
 var currentPhrase = document.querySelector("#loremPhrase");
 
 var currentAuthor = document.querySelector("#author");
 
 function changeData(){
-    currentPhrase.textContent = databasePhrasesAuthors[numberPhrase].phrase;
-    currentAuthor.textContent  = databasePhrasesAuthors[numberPhrase].author;
+    currentPhrase.textContent = databasePhrasesAuthors[numberPhrase].phrase;//aqui
+    currentAuthor.textContent  = databasePhrasesAuthors[numberPhrase].author;//aqui
  }
 
 var buttonGenerate = document.querySelector('#boxNewText');
 buttonGenerate.addEventListener("click", function(){
     changeData();
-    generateNumRandom();
+    generateNumRandom();//aqui
 });
