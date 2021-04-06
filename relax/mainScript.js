@@ -48,8 +48,9 @@ function generateNumRandom(){
     return nRandom;
 }
 
-var currentPhrase = document.querySelector("#loremPhrase");
+let numberPhrase = generateNumRandom(); 
 
+var currentPhrase = document.querySelector("#loremPhrase");
 var currentAuthor = document.querySelector("#author");
 
 function changeData(){
@@ -57,7 +58,6 @@ function changeData(){
     currentPhrase.textContent = databasePhrasesAuthors[numberPhrase].phrase;
     currentAuthor.textContent  = databasePhrasesAuthors[numberPhrase].author;
  }
-
 var buttonGenerate = document.querySelector('#boxNewText');
 buttonGenerate.addEventListener("click", function(){
     changeData();
