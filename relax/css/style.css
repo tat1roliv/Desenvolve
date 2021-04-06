@@ -48,7 +48,7 @@ a{
     color: #0079c7;
 }
 #banner{
-    background-image: url(./assets/blue.jpeg);
+    background-image: url(../img/blue.jpeg);
     background-position: center;
     background-size: cover;
     height: 670px;
